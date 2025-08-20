@@ -1,0 +1,556 @@
+/* ================== GENERAL STYLES ================== */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  background-color: #061f3f; 
+  color: #333;
+}
+
+/* ================== STICKY HEADER ================== */
+.site-header {
+  background-color: #071c38;
+  padding: 20px 5%; /* Adjusted padding for the larger logo */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.logo img {
+  height: 120px; /* Larger logo size */
+}
+
+.header-flex {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+/* ================== NAVIGATION ================== */
+.main-nav ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  gap: 25px;
+}
+
+.main-nav a {
+  text-decoration: none;
+  color: #ffffff;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.main-nav a:hover {
+  color: #00a9ff;
+}
+
+/* ================== SEARCH BAR ================== */
+.search-bar {
+  display: flex;
+}
+
+.search-bar input {
+  border: 1px solid #555;
+  background-color: #334a69;
+  color: white;
+  padding: 8px 12px;
+  border-radius: 4px 0 0 4px;
+  border-right: none;
+}
+
+.search-bar input::placeholder {
+  color: #ccc;
+}
+
+.search-bar button {
+  background-color: #00a9ff;
+  border: none;
+  color: white;
+  padding: 8px 15px;
+  cursor: pointer;
+  border-radius: 0 4px 4px 0;
+  transition: background-color 0.3s ease;
+}
+
+.search-bar button:hover {
+  background-color: #008ecc;
+}
+
+/* ================== CARD CONTAINER & STYLES (FLEXBOX VERSION) ================== */
+.container {
+  width: 99%;
+  max-width: 1920px;
+  margin: 20px auto;
+  
+  /* --- Flexbox Rules --- */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.card {
+  background-color: #061f3f;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  
+  /* --- Flex Item Rules --- */
+  flex-grow: 1;
+  flex-basis: 300px;
+  margin: 15px; /* Creates space around each card */
+}
+
+.card img {
+  width: 50%;
+  height: 125px;
+  object-fit: scale-down;
+  align-self: center;
+}
+
+.card p {
+  padding: 10px;
+  line-height: 1.6;
+  color: #ffeeee;
+  flex-grow: 1; 
+  font-size: 20px;
+  text-align: center;
+}
+
+.card .btn {
+  display: block;
+  background-color: #00a9ff;
+  color: #ffffff;
+  text-align: center;
+  padding: 15px;
+  text-decoration: none;
+  font-weight: bold;
+  margin: 20px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+  max-width: 30%;
+  width: 40%;
+  align-self: center; /* Center the button horizontally */
+}
+
+.card .btn:hover {
+  background-color: #008ecc;
+}
+
+/* ================== BANNER IMAGE ================== */
+.banner-image {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    display: block;
+}
+
+/* ================== BANNER SLIDESHOW ARROWS ================== */
+.banner-slideshow-container {
+  position: relative;
+  /* The container will size to the image inside it */
+}
+
+/* Next & previous buttons */
+.banner-slideshow-container .prev,
+.banner-slideshow-container .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -22px;
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+  background-color: rgba(0,0,0,0.3);
+}
+
+/* Position the "next button" to the right */
+.banner-slideshow-container .next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.banner-slideshow-container .prev:hover,
+.banner-slideshow-container .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+/* About page styles */
+
+
+/* --- About Page Layout --- */
+.about-layout {
+    display: flex;
+    align-items: center; /* Vertically centers the text and image */
+    gap: 2rem; /* Creates space between the text and image */
+    margin: 2rem 0; /* Adds space above and below the layout */
+}
+
+.about-text,
+.about-image {
+    flex: 1; /* This makes each column take up 50% of the space */
+}
+
+.about-text h1 {
+    text-align: center; /* Align heading with the paragraph text */
+    color: #ffeeee;
+}
+
+
+.about-image img {
+    width: 100%; /* Makes the image fill its container */
+    height: 850px; /* Maintains the image's aspect ratio */
+    border-radius: 8px; /* Optional: adds nice rounded corners */
+    display: block; /* Removes any extra space below the image */
+}
+
+/* --- About Page Specific Styles --- */
+.about-page .card {
+    margin-top: 2rem; /* Adjust this value to control the space above the card */
+}
+
+/* ================== NEW ABOUT PAGE LAYOUT STYLES ================== */
+
+/* --- 1. Adjust the main layout container --- */
+/* We'll increase the gap between the text and image for better separation */
+.about-layout {
+    gap: 4rem; /* Increases space between columns */
+}
+
+
+/* --- 2. Change text alignment to the left --- */
+.about-text {
+    text-align: left; /* Aligns all text inside to the left */
+}
+
+.about-text h1 {
+    text-align: center; /* Ensures the heading is also left-aligned */
+}
+
+
+/* --- 3. Make the image responsive --- */
+/* This removes the fixed height and allows the image to scale properly */
+.about-image img {
+    width: 100%;    /* Makes the image fill the column's width */
+    height: auto;   /* Maintains the correct aspect ratio */
+    max-height: 700px; /* Optional: Prevents the image from becoming excessively tall on large screens */
+    object-fit: cover; /* Ensures the image covers the area nicely */
+}
+
+
+/* --- 4. Style the new button for the about page --- */
+/* This targets the .btn specifically inside the .about-text container */
+.about-text .btn {
+    align-self: flex-start; /* Aligns the button to the left */
+    margin-left: 0;         /* Removes any centered margin */
+    margin-right: 0;        /* Removes any centered margin */
+    max-width: 200px;       /* Gives the button a defined max width */
+}
+
+
+
+/* ================== CONTACT PAGE STYLES (FLEXBOX VERSION) ================== */
+.contact-container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 40px auto;
+    color: #ffffff;
+}
+
+/* --- Section 1: Main Form Layout --- */
+.contact-flex-layout {
+    display: flex; /* Changed from grid */
+    gap: 40px;
+    align-items: center;
+    margin-bottom: 60px;
+}
+
+.contact-image-container,
+.contact-form-container {
+    flex: 1; /* This makes each column take up 50% of the space */
+}
+
+.contact-image-container img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.contact-form-container h2 {
+    font-size: 2.5rem;
+    color: #ffffff;
+    margin-bottom: 20px;
+}
+
+.contact-form .form-row {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 1px solid #555;
+    background-color: #334a69;
+    color: #ffffff;
+    border-radius: 5px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+}
+
+.contact-form .btn {
+    width: 100%;
+    padding: 15px;
+    font-size: 1.1rem;
+    margin: 0;
+}
+
+/* --- Section 2: Info Layout --- */
+.info-flex-layout {
+    display: flex; /* Changed from grid */
+    gap: 40px;
+    align-items: center;
+    margin-bottom: 60px;
+    background-color: #04142a;
+    padding: 40px;
+    border-radius: 8px;
+}
+
+.info-text,
+.info-map {
+    flex: 1; /* This makes each column take up 50% of the space */
+}
+
+.info-text h3 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+.info-text p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #ffeeee;
+}
+
+/* --- Section 3: FAQ Section --- */
+.faq-section {
+    margin-bottom: 60px;
+    text-align: center;
+}
+
+.faq-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+}
+
+.faq-item {
+    border-bottom: 1px solid #334a69;
+    text-align: left;
+}
+
+.faq-question {
+    width: 100%;
+    padding: 20px;
+    background: none;
+    border: none;
+    color: #ffffff;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 500;
+    text-align: left;
+    position: relative;
+    cursor: pointer; /* Make it look clickable */
+    list-style: none; /* Hide the default marker */
+}
+
+/* Hide the default marker in Webkit browsers */
+.faq-question::-webkit-details-marker {
+    display: none;
+}
+
+.faq-question::after {
+    content: '→';
+    position: absolute;
+    right: 20px;
+    font-size: 1.5rem;
+    transition: transform 0.3s ease; /* Animate the arrow */
+}
+
+/* Rotate the arrow when the details element is open */
+.faq-item[open] > .faq-question::after {
+    transform: rotate(90deg);
+}
+
+.faq-answer p {
+    padding: 0 20px 20px;
+    line-height: 1.6;
+    color: #ffeeee;
+}
+
+/* --- Section 4: CTA Banner --- */
+.cta-banner {
+    display: flex; /* Changed from grid */
+    align-items: center;
+    background-color: #00a9ff;
+    color: #061f3f;
+    padding: 40px;
+    border-radius: 8px;
+}
+.cta-text {
+    flex: 1; /* Make text column take 50% of space */
+}
+.cta-image {
+    flex: 1; /* Make image column take 50% of space */
+}
+.cta-text h3 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+.cta-text .btn {
+    background-color: #00a9ff;
+    color: #061f3f;
+}
+
+.cta-text .btn:hover {
+    background-color: #008ecc;
+}
+
+.cta-image img {
+    width: 100%;
+    max-width: 300px;
+    display: block;
+    margin: auto;
+    border-radius: 8px;
+    opacity: 80%; /* Optional: makes the image slightly transparent */
+}
+
+/* ================== BLOG PAGE STYLES (FLEXBOX VERSION) ================== */
+.blog-container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 40px auto;
+}
+
+.blog-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+    border-bottom: 1px solid #334a69;
+    padding-bottom: 20px;
+}
+
+.blog-header h1 {
+    margin: 0;
+    font-size: 2.5rem;
+    color: #ffeeee;
+}
+
+.view-all-link {
+    color: #00a9ff;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.view-all-link:hover {
+    color: #ffffff;
+}
+
+.blog-flex {
+    display: flex; /* Using Flexbox */
+    flex-wrap: wrap; /* Allows items to wrap to the next line */
+    gap: 30px;
+}
+
+.blog-card {
+    background-color: #04142a;
+    border-radius: 12px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid #334a69;
+    flex: 1 1 300px; /* Flex-grow, flex-shrink, flex-basis. Makes it responsive. */
+    display: flex; /* Make the card a flex container for its content */
+    flex-direction: column;
+}
+
+.blog-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 169, 255, 0.1);
+}
+
+.blog-card a {
+    text-decoration: none;
+    color: #ffffff;
+    display: flex; /* Make the link a flex container */
+    flex-direction: column;
+    flex-grow: 1; /* Allow the link to grow and fill the card */
+}
+
+.blog-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.card-content {
+    padding: 20px;
+    flex-grow: 1; /* Allows this section to grow, pushing footer content down */
+}
+
+.card-content .category {
+    display: inline-block;
+    margin-bottom: 10px;
+    color: #00a9ff;
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.card-content h2 {
+    margin: 0;
+    font-size: 1.4rem;
+    line-height: 1.4;
+}
+
+
+/* ================== RESPONSIVE STYLES ================== */
+@media (max-width: 768px) {
+    /* --- General --- */
+    .header-flex {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    /* --- About Page --- */
+    .about-layout {
+        flex-direction: column;
+    }
+
+    /* --- Contact Page --- */
+    .contact-flex-layout, .info-flex-layout, .cta-banner {
+        flex-direction: column;
+    }
+    .contact-image-container {
+        order: -1;
+    }
+    
+    /* --- Blog Page --- */
+    .blog-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+}
